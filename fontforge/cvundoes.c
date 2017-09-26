@@ -24,6 +24,8 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
+
+#include "inc/fontforge-config.h"
 #include "fontforgevw.h"
 #include "views.h"
 #include <math.h>
@@ -31,10 +33,10 @@
 #include <utype.h>
 #include "inc/gfile.h"
 
-#if defined(__MINGW32__)||defined(__CYGWIN__)
-// no backtrace on windows yet
+#ifndef HAVE_EXECINFO_H
+// no backtrace available
 #else
-    #include <execinfo.h>
+	#include <execinfo.h>
 #endif
 #include "collabclient.h"
 
