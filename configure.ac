@@ -380,6 +380,7 @@ AC_CHECK_HEADERS([string.h strings.h sys/ioctl.h sys/socket.h sys/time.h unistd.
 if test x"${i_do_want_iconv}" = xyes; then
    AC_CHECK_HEADERS([iconv.h])
 fi
+AC_CHECK_HEADERS([execinfo.h])
 
 #--------------------------------------------------------------------------
 #
