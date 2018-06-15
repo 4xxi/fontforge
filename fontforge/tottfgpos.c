@@ -1874,8 +1874,8 @@ static uint16 *FigureInitialClasses(FPST *fpst) {
 	for ( j=0; j<cnt ; ++j )
 	    if ( initial[j] == fpst->rules[i].u.class.nclasses[0] )
 	break;
-	if ( j==cnt )
-	    initial[cnt++] = fpst->rules[i].u.class.nclasses[0];
+	if ( j==cnt && NULL != fpst->rules[i].u.class.nclasses)
+	   initial[cnt++] = fpst->rules[i].u.class.nclasses[0];
     }
     qsort(initial,cnt,sizeof(uint16),ui16cmp);
     initial[cnt] = 0xffff;
